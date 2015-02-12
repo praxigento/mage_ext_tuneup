@@ -1,0 +1,5 @@
+1.1.0:
+- Composer module version;
+
+1.0.0:
+- Initial version;

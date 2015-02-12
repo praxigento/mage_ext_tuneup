@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright (c) 2013, Praxigento
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without modification, are permitted provided that the
+ * following conditions are met:
+ *  - Redistributions of source code must retain the above copyright notice, this list of conditions and the following
+ *      disclaimer.
+ *  - Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the
+ *      following disclaimer in the documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+ * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+-->
+<config>
+    <tabs>
+        <prxgt>
+            <!-- This is all module's common tab (should be the same for all modules) -->
+            <label>Praxigento</label>
+            <sort_order>1024</sort_order>
+        </prxgt>
+    </tabs>
+    <sections>
+        <prxgt_tup translate="label">
+            <label>Tune Up</label>
+            <tab>prxgt</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>1000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <frontend translate="label" module="prxgt_tup_helper">
+                    <label>Setup Magento Frontend</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <!-- Used in frontend layout -->
+                        <product_comparison_disabled translate="label comment">
+                            <label>Disable Products Comparison</label>
+                            <comment>Enable/disable product comparison component on the frontend.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </product_comparison_disabled>
+                        <navigation_links_disabled translate="label comment">
+                            <!-- Available Customer Account Navigation Links  -->
+                            <label>Disable Navigation Links</label>
+                            <comment>Select account navigation links to be hidden on the frontend.</comment>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>prxgt_tup_model/own_source_navigationLinks</source_model>
+                            <sort_order>200</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </navigation_links_disabled>
+                    </fields>
+                </frontend>
+            </groups>
+        </prxgt_tup>
+    </sections>
+</config>

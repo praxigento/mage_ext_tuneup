@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright (c) 2013, Praxigento
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without modification, are permitted provided that the
+ * following conditions are met:
+ *  - Redistributions of source code must retain the above copyright notice, this list of conditions and the following
+ *      disclaimer.
+ *  - Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the
+ *      following disclaimer in the documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+ * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+-->
+<config>
+    <modules>
+        <Praxigento_TuneUp>
+            <version>1.1.0</version>
+        </Praxigento_TuneUp>
+    </modules>
+    <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <!-- Section on the "System/Configuration" panel -->
+                                        <prxgt_tup translate="title" module="prxgt_tup_helper">
+                                            <title>Praxigento: Tune Up</title>
+                                            <sort_order>1000</sort_order>
+                                        </prxgt_tup>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <layout>
+            <updates>
+                <prxgt_tup_admin_layout>
+                    <file>prxgt/tup/tup_adminhtml_layout.xml</file>
+                </prxgt_tup_admin_layout>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <prxgt_tup>
+                    <files>
+                        <default>prxgt/tup/prxgt_tup.csv</default>
+                    </files>
+                </prxgt_tup>
+            </modules>
+        </translate>
+    </adminhtml>
+    <frontend>
+        <layout>
+            <updates>
+                <prxgt_tup_front_layout>
+                    <file>prxgt/tup/tup_frontend_layout.xml</file>
+                </prxgt_tup_front_layout>
+            </updates>
+        </layout>
+    </frontend>
+    <global>
+        <blocks>
+            <prxgt_tup_block>
+                <class>Praxigento_TuneUp_Block</class>
+            </prxgt_tup_block>
+            <customer>
+                <!-- TUP-4 -->
+                <rewrite>
+                    <account_navigation>Praxigento_TuneUp_Block_Customer_Account_Navigation</account_navigation>
+                </rewrite>
+            </customer>
+        </blocks>
+        <helpers>
+            <catalog>
+                <rewrite>
+                    <product_compare>Praxigento_TuneUp_Helper_Catalog_Product_Compare</product_compare>
+                </rewrite>
+            </catalog>
+            <!-- Default helper for module (prevents errors like "Class 'Nmmlm_Core_Helper_Data' not found in") -->
+            <!-- used in <some_node module="prxgt_tup_helper"> nodes -->
+            <prxgt_tup_helper>
+                <class>Praxigento_TuneUp_Helper</class>
+            </prxgt_tup_helper>
+        </helpers>
+        <models>
+            <prxgt_tup_model>
+                <class>Praxigento_TuneUp_Model</class>
+            </prxgt_tup_model>
+        </models>
+    </global>
+</config>

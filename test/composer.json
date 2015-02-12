@@ -4,12 +4,6 @@
   "license": "MIT",
   "homepage": "https://github.com/praxigento/mage_ext_tuneup",
   "description": "Magento project with deployment script and mage_ext_tuneup extension.",
-  "require": {
-    "magento-hackathon/magento-composer-installer": "*",
-    "magento-hackathon/composer-command-integrator": "*",
-    "magento/core": "1.9.1.0",
-    "praxigento/mage_ext_tuneup": "dev-master"
-  },
   "repositories": [
     {
       "type": "composer",
@@ -17,9 +11,20 @@
     },
     {
       "type": "vcs",
+      "url": "https://github.com/astorm/PulsestormModuleList"
+    },
+    {
+      "type": "vcs",
       "url": "https://github.com/praxigento/mage_ext_tuneup"
     }
   ],
+  "require": {
+    "magento-hackathon/magento-composer-installer": "*",
+    "magento-hackathon/composer-command-integrator": "*",
+    "magento/core": "1.9.1.0",
+    "astorm/PulsestormModuleList": "0.2.2",
+    "praxigento/mage_ext_tuneup": "dev-master"
+  },
   "extra": {
     "magento-root-dir": "mage",
     "magento-deploystrategy": "symlink",
