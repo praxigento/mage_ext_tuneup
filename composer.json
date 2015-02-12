@@ -1,0 +1,30 @@
+{
+  "name": "praxigento/mage_ext_tuneup",
+  "type": "magento-module",
+  "license": "MIT",
+  "homepage": "https://github.com/praxigento/mage_ext_tuneup",
+  "description": "Magento extension: Store Tune Up",
+  "authors": [
+    {
+      "name": "Alex Gusev",
+      "email": "flancer64@gmail.com"
+    },
+    {
+      "name": "Vladimir Golobokov",
+      "email": "vladimirg@inbox.lv"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "http://packages.firegento.com"
+    }
+  ],
+  "require": {
+    "magento-hackathon/magento-composer-installer": "*"
+  },
+  "config": {
+    "preferred-install": "source"
+  }
+}
+
