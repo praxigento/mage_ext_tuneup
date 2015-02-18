@@ -1,4 +1,4 @@
-src/app/code/community/Praxigento/TuneUp/ src/app/code/community/Praxigento/TuneUp/
+src/app/code/community/Praxigento/TuneUp/ app/code/community/Praxigento/TuneUp/
 src/app/design/adminhtml/default/default/layout/prxgt/tup/tup_adminhtml_layout.xml app/design/adminhtml/default/default/layout/prxgt/tup/tup_adminhtml_layout.xml
 src/app/design/frontend/default/default/layout/prxgt/tup/tup_frontend_layout.xml app/design/frontend/default/default/layout/prxgt/tup/tup_frontend_layout.xml
 src/app/etc/modules/Praxigento_TuneUp.xml app/etc/modules/Praxigento_TuneUp.xml
