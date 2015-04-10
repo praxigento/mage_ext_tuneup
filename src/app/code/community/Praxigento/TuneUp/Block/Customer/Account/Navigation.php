@@ -18,27 +18,34 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
+
 /**
  * User: Alex Gusev <flancer64@gmail.com>
  * Date: 3/30/13
  * Time: 3:32 PM
  */
-
-class Praxigento_TuneUp_Block_Customer_Account_Navigation extends Mage_Customer_Block_Account_Navigation
-{
+class Praxigento_TuneUp_Block_Customer_Account_Navigation extends Mage_Customer_Block_Account_Navigation {
     /**
      * Remove disabled account navigation links before HTML generation.
      * @return $this|Mage_Core_Block_Abstract
      */
-    protected function _beforeToHtml()
-    {
+    protected function _beforeToHtml() {
+        parent::_beforeToHtml();
         $disabled = Praxigento_TuneUp_Config::cfgFrontendNavigationLinksDisabled();
-        foreach ($this->_links as $key => $one) {
-            if (in_array($key, $disabled)) {
-                unset($this->_links[$key]);
+        foreach($this->_links as $key => $one) {
+            if(in_array($key, $disabled)) {
+                unset($this->_links[ $key ]);
             }
         }
         return $this;
     }
 
+    /**
+     * AD-195: add write access to links to remove some links according to some conditions.
+     *
+     * @param $links
+     */
+    public function setLinks($links) {
+        $this->_links = $links;
+    }
 }
